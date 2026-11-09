@@ -79,3 +79,7 @@ This software is provided "as is," without warranty of any kind. Use it at your 
 If you are a rights holder and would like something changed or removed, please open an Issue or contact the repository owner and it will be addressed promptly.
 
 If you enjoy the game, please support the creators by buying the real thing from Fantasy Flight Games.
+
+License
+
+The original code in this repository is released under the MIT License. This license covers only the original code and does not grant any rights to Twilight Imperium trademarks, names, or content.
