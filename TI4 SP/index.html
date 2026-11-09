@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TI Practice Table</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">TI Practice Table</div>
+    <div id="status-line">Set up a game to begin.</div>
+    <div class="top-actions">
+      <button id="btn-new" class="ghost">New game</button>
+      <button id="btn-undo" class="ghost" title="Undo: abandon the open decision and go back (only during your own turn)" disabled>↩ Undo</button>
+      <button id="btn-save" class="ghost" title="Download this game as a file (the game also autosaves in this browser)">Save to file</button>
+      <button id="btn-load" class="ghost" title="Load a game saved to a file">Load file</button>
+      <label class="ghost-select" title="Tile artwork">Tiles <select id="tile-style"></select></label>
+      <button id="btn-panels" class="ghost" title="Show or hide the reference panels on the left">Panels</button>
+      <button id="btn-tech" class="ghost" title="Technology tree: what each technology needs">Tech tree</button>
+      <button id="btn-factions" class="ghost">Faction sheets</button>
+      <button id="btn-rules" class="ghost">Rules notes</button>
+    </div>
+  </header>
+
+  <div id="tracker"></div>
+
+  <main id="layout">
+    <aside id="left"><div id="left-body"></div></aside>
+    <section id="board-wrap">
+      <svg id="board" viewBox="-330 -300 660 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Galaxy map"></svg>
+      <div id="hint" class="hint"></div>
+      <div id="board-tools" role="toolbar" aria-label="Board zoom">
+        <button id="zoom-in" class="secondary" title="Zoom in (+)">+</button>
+        <button id="zoom-out" class="secondary" title="Zoom out (-)">−</button>
+        <button id="zoom-fit" class="secondary" title="Fit whole galaxy (0)">Fit</button>
+        <span id="zoom-level" class="note">100%</span>
+        <button id="btn-legend" class="secondary" title="What do the icons mean?">Icons</button>
+      </div>
+      <div id="inspector" class="panel" hidden>
+        <button id="inspector-close" class="secondary" title="Close">×</button>
+        <div id="inspector-body"></div>
+      </div>
+    </section>
+
+    <aside id="side">
+      <div id="players" class="panel"></div>
+      <div id="objectives" class="panel"></div>
+      <div id="log-panel" class="panel">
+        <div class="log-head"><h3>Game log</h3><span id="log-filters"><button data-f="all" class="secondary on">All</button><button data-f="bots" class="secondary">Bots</button><button data-f="me" class="secondary">Me</button><button data-f="combat" class="secondary">Combat</button></span></div>
+        <div id="log" aria-live="polite"></div>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div id="viewer-root" hidden>
+  <div id="viewer" role="dialog" aria-modal="true">
+    <div id="viewer-head"><h2 id="viewer-title"></h2><button id="viewer-close" class="secondary">Close ✕</button></div>
+    <div id="viewer-body"></div>
+  </div>
+</div>
+<div id="modal-root" hidden>
+  <div id="modal" role="dialog" aria-modal="true">
+    <div id="modal-head"><h2 id="modal-title"></h2><button id="modal-peek" class="secondary" title="Hide this box to look at the board (H)">👁 See board</button></div>
+    <div id="modal-body"></div>
+    <div id="modal-actions"></div>
+  </div>
+  <button id="peek-tab" class="peek-tab" title="Bring the decision box back (H)">↩ Back to decision: <span id="peek-title"></span></button>
+</div>
+
+<script src="src/rng.js"></script>
+<script src="src/units.js"></script>
+<script src="src/combat.js"></script>
+<script src="src/tiles.js"></script>
+<script src="src/map.js"></script>
+<script src="src/data.js"></script>
+<script src="src/factions2.js"></script>
+<script src="src/state.js"></script>
+<script src="src/moves.js"></script>
+<script src="src/tactical.js"></script>
+<script src="src/abilities.js"></script>
+<script src="src/phases.js"></script>
+<script src="src/cards.js"></script>
+<script src="src/actioncards.js"></script>
+<script src="src/agenda.js"></script>
+<script src="src/trade.js"></script>
+<script src="src/abilities2.js"></script>
+<script src="src/bot_tactics.js"></script>
+<script src="src/bots.js"></script>
+<script src="src/ui/icons.js"></script>
+<script src="src/ui/tilestyle.js"></script>
+<script src="src/ui/render.js"></script>
+<script src="src/ui/panels.js"></script>
+<script src="src/ui/view.js"></script>
+<script src="src/ui/dialogs.js"></script>
+<script src="src/ui/game_dialogs.js"></script>
+<script src="src/ui/combat.js"></script>
+<script src="src/ui/human.js"></script>
+<script src="src/ui/main.js"></script>
+</body>
+</html>
